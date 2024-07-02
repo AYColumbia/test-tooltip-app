@@ -11,6 +11,7 @@ import { Printer } from 'react-bootstrap-icons'
 import '../App.css';
 import { Tooltip } from 'react-tooltip';
 import debounce from 'lodash.debounce';
+import CustomTooltip from './CustomTooltip';
 
 function TestComponent2() {
   const [listData, setListData] = useState([]);
@@ -58,13 +59,17 @@ function TestComponent2() {
               </Row>
               <Row className='pt-2'>
                 <Form.Group as={Col} md={4} className='d-flex'>
-                  <Button data-tooltip-id='custom-tooltip' data-tooltip-content={'Go home...'}
+                  <Button data-tooltip-id='custom-tt' data-tooltip-content={'Go home...'}
                     type='submit'>
                     <Printer /> <span className='align-middle'>Click Me</span></Button>
                 </Form.Group>
               </Row>
             </Form>
-            <Tooltip id="custom-tooltip" place="right" delayHide={1000} />
+            <Tooltip id="custom-tooltip" place="right" delayHide={1000}
+              style={{ backgroundColor: "rgb(0, 255, 30)", color: "#222" }} />
+            <CustomTooltip id="custom-tt" place="top-start" delayHide={1000}
+              data-tooltip-class-name="custom-tooltip"
+              style={{ backgroundColor: "rgb(128,0,0)", color: "#ff0" }} />
           </>
         )}
       </Formik>
