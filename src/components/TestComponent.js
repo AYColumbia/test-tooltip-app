@@ -40,13 +40,13 @@ function TestComponent() {
 
   return (
     <div>
-      <Formik enableReinitialize={ true } initialValues={ {} }
-        onSubmit={ (values, fprops) => window.location.href = '/T2'}
+      <Formik enableReinitialize={true} initialValues={{}}
+        onSubmit={(values, fprops) => window.location.href = '/T2'}
       >
         {(formikProps) =>
         (
           <>
-            <Form className='form-control p-4' noValidate onSubmit={(e) => formikProps.handleSubmit(e, formikProps) }>
+            <Form className='form-control p-4' noValidate onSubmit={(e) => formikProps.handleSubmit(e, formikProps)}>
               <Row>
                 <Form.Group as={Col} md={8}>
                   <Form.Label>This is a label</Form.Label>
@@ -70,13 +70,16 @@ function TestComponent() {
                 <Form.Group as={Col} md={4}>
                   <Button type='submit'
                     data-tooltip-id='custom-tt' data-tooltip-content={'Click me to find out'}>
-                      <Printer /> Click Me
+                    <Printer /> Click Me
                   </Button>
                 </Form.Group>
               </Row>
             </Form>
-            <Tooltip id="custom-tooltip" place="right" delayHide={2000} />
-            <CustomTooltip id="custom-tt" place="top-start" delayHide={1000} data-tooltip-class-name="custom-tooltip" />
+            <Tooltip id="custom-tooltip" place="right" delayHide={2000}
+              style={{ backgroundColor: "rgb(0, 255, 30)", color: "#222" }} />
+            <CustomTooltip id="custom-tt" place="top-start" delayHide={1000}
+              data-tooltip-class-name="custom-tooltip"
+              style={{ backgroundColor: "rgb(128,0,0)", color: "#ff0" }} />
           </>
         )}
       </Formik>
