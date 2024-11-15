@@ -44,6 +44,8 @@
   "scripts": {
     "buildwp": "cross-env webpack --mode development --env development --config webpack.config.js",
     "startwp": "cross-env webpack-dev-server --mode development --env development --config webpack.config.js",
+    "buildpwp": "cross-env webpack --mode production --env production --config webpack.config.js",
+    "startpwp": "cross-env webpack-dev-server --mode production --env production --config webpack.config.js",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
