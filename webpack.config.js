@@ -26,7 +26,7 @@ const commonConfig = {
     ],
     entry: path.resolve(__dirname, './src/index.js'),
     resolve: {
-        extensions: ['.js', '.jsx']
+        extensions: ['.js', '.jsx', '.mjs', '.cjs']
     },
     output: {
         filename: 'bundle.js',
@@ -43,7 +43,7 @@ const commonConfig = {
     module: {
         rules: [
             {
-                test: /\.(js|mjs|jsx|ts|tsx)$/,
+                test: /\.(js|mjs|cjs|jsx|ts|tsx)$/,
                 include: [path.resolve(__dirname, 'src')],
                 exclude: /[\\/]node_modules[\\/]/,
                 use: [
